@@ -18,14 +18,14 @@ public class ClientController {
         this.clientService = clientService;
     }
 
-    //Retorna todos los datos de la tabla.
+    //Returns all the data in the table.
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Client> findAll() {
         return clientService.findAll();
     }
 
-    //Retorna los datos del cliente según su id
+    //Returns customer data according to their id
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Client findById(@PathVariable("id") Integer id) {
@@ -39,7 +39,7 @@ public class ClientController {
         return clientService.getByDni(dni);
     }
 
-    //TODO: Ver como mejorar esto según el standard RESTFUL
+    //returns all data from the buys table
     @GetMapping("/all-buy")
     @ResponseStatus(HttpStatus.OK)
     public List<AllBuysResponseDto> getAllByBuys() {
@@ -53,7 +53,7 @@ public class ClientController {
         return clientService.save(client);
     }
 
-    //Elimina los clientes según su id correspondiente
+    //Delete customers based on their corresponding id
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
         public void deleteById(@PathVariable("id") Integer id) {
