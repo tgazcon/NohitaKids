@@ -39,7 +39,6 @@ public class ClientController {
         return clientService.getByDni(dni);
     }
 
-    //TODO: Ver como mejorar esto según el standard RESTFUL
     @GetMapping("/all-buy")
     @ResponseStatus(HttpStatus.OK)
     public List<AllBuysResponseDto> getAllByBuys() {
